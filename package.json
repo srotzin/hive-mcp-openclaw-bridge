@@ -1,0 +1,41 @@
+{
+  "name": "hive-mcp-openclaw-bridge",
+  "version": "1.0.0",
+  "description": "Reference integration with @kinthaiofficial's OpenClaw 3-layer payment governance framework. MCP server wraps Hive Gamification's 8 BOGO doors behind a 4-level hierarchical budget (Namespace → User → Agent → Task) — atomic reserve, upstream POST, settle/release. Real rails. No mock settlement.",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "hive-mcp-openclaw-bridge": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/"
+  },
+  "keywords": [
+    "mcp",
+    "hive",
+    "openclaw",
+    "kinthai",
+    "x402",
+    "budget",
+    "governance",
+    "ai-agents",
+    "a2a",
+    "usdc",
+    "bogo"
+  ],
+  "author": "Steve Rotzin <steve@thehiveryiq.com> (https://www.thehiveryiq.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/srotzin/hive-mcp-openclaw-bridge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srotzin/hive-mcp-openclaw-bridge"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

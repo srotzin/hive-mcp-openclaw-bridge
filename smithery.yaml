@@ -1,0 +1,95 @@
+# Smithery Registry — hive-mcp-openclaw-bridge
+# https://smithery.ai
+
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    properties: {}
+    required: []
+  url: https://hive-gamification.onrender.com/mcp/hive-mcp-openclaw-bridge
+
+name: hive-mcp-openclaw-bridge
+displayName: Hive × OpenClaw Bridge — 4-level budget hierarchy gating 8 BOGO doors
+version: "1.0.0"
+description: >
+  Reference integration with @kinthaiofficial's OpenClaw 3-layer payment governance
+  framework. Wraps Hive Gamification's 8 BOGO doors behind a 4-level hierarchical
+  Layer-1 budget (Namespace → User → Agent → Task). Every external x402 settlement
+  is atomically reserved against every level in the scope path before signing;
+  the most-restrictive level governs. Real rails. No mock settlement.
+
+author:
+  name: Steve Rotzin
+  email: steve@thehiveryiq.com
+  url: https://www.thehiveryiq.com
+
+license: MIT
+homepage: https://github.com/srotzin/hive-mcp-openclaw-bridge
+repository:
+  type: git
+  url: https://github.com/srotzin/hive-mcp-openclaw-bridge
+
+transport: streamable-http
+endpoint: https://hive-gamification.onrender.com/mcp
+protocol: "2024-11-05"
+
+categories:
+  - finance
+  - agent-to-agent
+  - payments
+  - governance
+  - web3
+
+tags:
+  - mcp
+  - hive
+  - openclaw
+  - kinthai
+  - x402
+  - budget
+  - governance
+  - ai-agents
+  - a2a
+  - usdc
+  - bogo
+
+tools:
+  - name: budget_status
+    description: Inspect Layer 1 caps, spend, reservations, and headroom across all 4 levels.
+  - name: budget_set_cap
+    description: Set or override a per-key cap at one of the four budget levels.
+  - name: budget_check
+    description: Pre-flight check whether an amount fits under all configured caps for a scope.
+  - name: doors_list
+    description: List all 8 Hive BOGO doors with endpoint, price, asset, and term.
+  - name: door_economics
+    description: Fetch live /economics for one door.
+  - name: bogo_claim
+    description: Claim first-use-free entitlement via /v1/bogo/claim.
+  - name: door_subscribe
+    description: Atomic reserve → upstream POST → settle. Canonical gated path through the bridge.
+
+runtime:
+  type: node
+  version: ">=18"
+  command: node server.js
+  env:
+    - name: PORT
+      default: "3000"
+      required: false
+    - name: HIVE_BASE
+      default: "https://hive-gamification.onrender.com"
+      required: false
+    - name: NAMESPACE_CAP
+      default: "50"
+      required: false
+    - name: USER_CAP
+      default: "10"
+      required: false
+    - name: AGENT_CAP
+      default: "2"
+      required: false
+    - name: TASK_CAP
+      default: "0.50"
+      required: false
