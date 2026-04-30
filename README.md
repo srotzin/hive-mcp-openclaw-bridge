@@ -1,5 +1,7 @@
 # hive-mcp-openclaw-bridge
 
+[![srotzin/hive-mcp-openclaw-bridge MCP server](https://glama.ai/mcp/servers/srotzin/hive-mcp-openclaw-bridge/badges/score.svg)](https://glama.ai/mcp/servers/srotzin/hive-mcp-openclaw-bridge)
+
 > Reference integration with [@kinthaiofficial](https://blog.kinthai.ai)'s **OpenClaw** 3-layer payment governance framework.
 > MCP server that wraps Hive Gamification's 8 BOGO doors behind a 4-level hierarchical budget — atomic reserve, upstream POST, settle/release.
 > Real rails. No mock settlement.
